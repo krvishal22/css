@@ -1,55 +1,77 @@
 .btn {
-    &:link,
-    &:visited {
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 10rem;
-      transition: all 0.2s;
-      position: relative;
-    }
-  
-    &:hover {
-      transform: translateY(-0.3rem);
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.4); /* x-axis y-axis blur color */
-  
-      &::after {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-    }
-  
-    &:active {
-      transform: translateY(-0.1rem);
-      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4); /* x-axis y-axis blur color */
-    }
-  
-    &--white {
-      background-color: $color-white;
-      color: $color-grey-dark;
-      padding: 1.5rem 4rem;
-  
-      &::after {
-        background-color: $color-white;
-        transition: all 0.4s;
-      }
-    }
-  
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4); /* x-axis y-axis blur color */
+
     &::after {
-      content: "";
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      border-radius: 10rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-  
-    &--animated {
-      animation: moveInBottom 0.5s ease-out 0.75s; /* last value is the delay */
-      /* as we can see we have a delay so we want button to start displaying only after animation started */
-      animation-fill-mode: backwards; /* values applied by the animation outside the time it is executing. */
+      transform: scale(1.5);
+      opacity: 0;
     }
   }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4); /* x-axis y-axis blur color */
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 1.5rem 4rem;
+
+    &::after {
+      background-color: $color-white;
+      transition: all 0.4s;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s; /* last value is the delay */
+    /* as we can see we have a delay so we want button to start displaying only after animation started */
+    animation-fill-mode: backwards; /* values applied by the animation outside the time it is executing. */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-3px);
+  }
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+}
